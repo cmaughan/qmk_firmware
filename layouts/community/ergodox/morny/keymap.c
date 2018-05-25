@@ -36,43 +36,43 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
   /* layer 0 : default
    *
    * ,--------------------------------------------------.           ,--------------------------------------------------.
-   * | `      |   1  |   2  |   3  |   4  |   5  |   6  |           |  7   |   8  |   9  |   0  |   -  |   =  | BCKSPC |
+   * |        |   1  |   2  |   3  |   4  |   5  |   6  |           |  7   |   8  |   9  |   0  |   -  |   =  | BCKSPC |
    * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
    * | TAB    |   Q  |   W  |   E  |   R  |   T  | HOME |           | PGUP |   Y  |   U  |   I  |   O  |   P  | DELETE |
    * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-   * | '      |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  ENTER |
+   * |        |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |  ENTER |
    * |--------+------+------+------+------+------|  END |           | PGDN |------+------+------+------+------+--------|
-   * | (/LSFT |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |  UP  | )/RSFT |
+   * | (/LSFT |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | )/RSFT |
    * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-   * | LCTRL  | LGUI | MENU | LEAD | SYMB |                                       |SYMB  | LEFT | DOWN |  RIGHT |
+   * | LCTRL  | LGUI | ALT  |      | SYMB\ |                                      |SYMB/ | ALT  | CTRL |RIGHT |     |
    * `------------------------------------'                                       `------------------------------------'
    *                                        ,-------------.       ,-------------.
-   *                                        |LAlt  |TXBOLT|       | VOL- | RAlt |
+   *                                        | LEAD |TXBOLT|       |      |      |
    *                                 ,------|------|------|       |------+------+------.
-   *                                 |      |LShift| Ctrl |       | MUTE |WHACK |      |
+   *                                 |      |      |      |       |      |      |      |
    *                                 | DEL  |      |------|       |------|      | SPC  |
-   *                                 |      |      | ESC  |       | SYMB |      |      |
+   *                                 |      |      | ESC  |       |(SYMB)|      |      |
    *                                 `--------------------'       `--------------------'
    */
   [BASE] = LAYOUT_ergodox(
     // left hand
-    KC_GRV,     KC_1,       KC_2,       KC_3,       KC_4,       KC_5,       KC_6,
-    KC_TAB,     KC_Q,       KC_W,       KC_E,       KC_R,       KC_T,       KC_HOME,
-    KC_QUOT,    KC_A,       KC_S,       KC_D,       KC_F,       KC_G,
-    KC_LSPO,    KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,       KC_END,
-    KC_LCTL,    KC_LGUI,    KC_MENU,    KC_LEAD,    LT(SYMB, KC_BSLS),
-                                                                F(F_ALT),    TG(TXBOLT),
-                                                                             F(F_CTRL),
-                                                        KC_DEL, F(F_SFT),    KC_ESC,
+    _______,     KC_1,       KC_2,       KC_3,       KC_4,                KC_5,       KC_6,
+    KC_TAB,      KC_Q,       KC_W,       KC_E,       KC_R,                KC_T,       KC_HOME,
+    _______,     KC_A,       KC_S,       KC_D,       KC_F,                KC_G,
+    KC_LSPO,     KC_Z,       KC_X,       KC_C,       KC_V,                KC_B,       KC_END,
+    KC_LCTL,     KC_LGUI,    F(F_ALT),   _______,    LT(SYMB, KC_BSLS),
+                                                                                        KC_LEAD,    TG(TXBOLT),
+                                                                                                    _______,
+                                                                                KC_DEL, _______,    KC_ESC,
     // right hand
-        KC_7,       KC_8,       KC_9,       KC_0,       KC_MINS,    KC_EQL,     KC_BSPC,
-        KC_PGUP,    KC_Y,       KC_U,       KC_I,       KC_O,       KC_P,       KC_DEL,
-                    KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_ENTER,
-        KC_PGDN,    KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_UP,      KC_RSPC,
-                    LT(SYMB, KC_SLSH),   MT(MOD_RCTL, KC_RBRC),  KC_LEFT,    KC_DOWN,    KC_RGHT,
-        KC_VOLD,    F(F_ALT),
-        KC_MUTE,
-        TG(SYMB),   KC_BSLS,   KC_SPC
+        KC_7,       KC_8,                KC_9,                   KC_0,       KC_MINS,    KC_EQL,     KC_BSPC,
+        KC_PGUP,    KC_Y,                KC_U,                   KC_I,       KC_O,       KC_P,       KC_DEL,
+                    KC_H,                KC_J,                   KC_K,       KC_L,       KC_SCLN,    KC_ENTER,
+        KC_PGDN,    KC_N,                KC_M,                   KC_COMM,    KC_DOT,     KC_SLSH,    KC_RSPC,
+                    LT(SYMB, KC_SLSH),   MT(MOD_RCTL, KC_RBRC),  F(F_ALT),   F(F_CTRL),  KC_RGHT,
+        _______,    _______,
+        _______,
+        TG(SYMB),   _______,   KC_SPC
 ),
 
 /* Keymap 1: Symbol Layer
